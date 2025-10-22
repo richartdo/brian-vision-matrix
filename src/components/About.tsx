@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import profilePhoto from "@/assets/profile-photo.png";
+import profilePhoto from "@/assets/profile-phot.png";
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -10,10 +10,10 @@ const About = () => {
   });
 
   const socialLinks = [
-    { icon: FaGithub, href: "https://github.com", label: "GitHub" },
+    { icon: FaGithub, href: "https://github.com/richartdo", label: "GitHub" },
     { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: FaEnvelope, href: "mailto:brian@example.com", label: "Email" },
+    { icon: FaTwitter, href: "https://x.com/MadeBy_Richard", label: "Twitter" },
+    { icon: FaEnvelope, href: "mailto:brianarichard14@gmail.com", label: "Email" },
   ];
 
   return (

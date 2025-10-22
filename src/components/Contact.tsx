@@ -34,28 +34,28 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "brian.richard@example.com",
-      href: "mailto:brian.richard@example.com",
+      value: "brianarichard14@gmail.com",
+      href: "mailto:brianarichard14@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+(254) 795 594 142",
+      href: "tel:+254795594142",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Nairobi, Kenya",
       href: "#",
     },
   ];
 
   const socialLinks = [
-    { icon: FaGithub, href: "https://github.com", label: "GitHub", color: "hover:text-gray-400" },
+    { icon: FaGithub, href: "https://github.com/richartdo", label: "GitHub", color: "hover:text-gray-400" },
     { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:text-blue-500" },
-    { icon: FaTwitter, href: "https://twitter.com", label: "Twitter", color: "hover:text-blue-400" },
-    { icon: FaEnvelope, href: "mailto:brian@example.com", label: "Email", color: "hover:text-red-400" },
+    { icon: FaTwitter, href: "https://x.com/MadeBy_Richard", label: "Twitter", color: "hover:text-blue-400" },
+    { icon: FaEnvelope, href: "mailto:brianarichard14@gmail.com", label: "Email", color: "hover:text-red-400" },
   ];
 
   return (

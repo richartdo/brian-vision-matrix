@@ -51,7 +51,6 @@ const Navbar = () => {
             className="text-xl lg:text-2xl font-bold text-foreground tracking-tight"
           >
             <span className="text-primary">BRIAN RICHARD</span>
-            <span className="text-muted-foreground ml-2 text-sm lg:text-base">SOLUTIONS</span>
           </motion.div>
 
           {/* Desktop Navigation */}
