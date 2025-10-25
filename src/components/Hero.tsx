@@ -49,7 +49,7 @@ const Hero = () => {
                 Software & AI Solutions Developer
               </span>
               <span className="block text-accent text-3xl lg:text-4xl mt-2 font-medium">
-                Cloud Engineer
+                | Cloud Engineer
               </span>
             </motion.h1>
 
