@@ -2,6 +2,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ExternalLink, Github } from "lucide-react";
+import MailBrainImg from "@/assets/MailBrain.png";
+import CampusDealsImg from "@/assets/campusdeal.png";
+import cropImg from "@/assets/crop.png";
+import EmployImg from "@/assets/Employee.png";
+import SalaryImg from "@/assets/salary.png";
+import LibraryImg from "@/assets/Library.png";
+import BitflowImg from "@/assets/Bitflow.png";
+import LylopImg from "@/assets/lylop.png";
+
+
 
 const Portfolio = () => {
   const [ref, inView] = useInView({
@@ -19,7 +29,7 @@ const Portfolio = () => {
       category: "AI",
       description: "An intelligent system that scans email history, extracts and organizes content into a searchable database — enabling quick insights, categorization, and automated follow-ups.",
       tech: ["Python", "FastAPI", "PostgreSQL", "OpenAI API", "React", "n8n"],
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+      image: MailBrainImg,
       github: "#",
       demo: "#",
     },
@@ -28,88 +38,61 @@ const Portfolio = () => {
       category: "Web",
       description: "Secure campus marketplace where students buy and sell services safely through verified profiles and escrow payments.",
       tech: ["React Native", "Node.js", "Express", "Firebase",  "M-Pesa API"],
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+      image: CampusDealsImg,
       github: "#",
       demo: "#",
     },
     {
-      title: "Personal Finance Tracker (HELB Student Edition)",
-      category: "Web",
-      description: "A budgeting platform that helps students track their income, expenses, and HELB loan spending with clear analytics.",
-      tech: ["React", "Django REST", "PostgreSQL", "Chart.js"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c",
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "AI-Powered Notes App",
+      title: "Bitflow — Social Media Automation Agent",
       category: "AI",
-      description: "Smart note-taking application that uses AI to summarize notes, tag topics automatically, and enable natural language search.",
-      tech: ["Python", "FastAPI", "React", "Firebase", "OpenAI API"],
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+      description: "An AI-powered automation system that manages social media content creation and posting. It fetches topics from Google Sheets, generates captions and images using AI, and automatically posts to Facebook, X, and LinkedIn based on platform-specific rules and schedules.",
+      tech: ["n8n", "OpenAI", "Blotato", "Social Media API Integrations (Facebook, X, LinkedIn)"],
+      image: BitflowImg,
       github: "#",
+      demo: "https://drive.google.com/drive/folders/1ROXRHTZLaXBYyUIomnJREYeQOk4cbiEq?usp=sharing",
+    },
+    {
+      title: "Lylop — Social Media Automation AI Agent",
+      category: "AI",
+      description: "An AI-driven automation system designed for Facebook and X, enabling full-cycle content automation. It fetches topics from Google Sheets, generates captions and image prompts using AI, creates visuals, and posts automatically to each platform based on their rules and schedule.",
+      tech: ["n8n", "OpenAI", "Blotato", "Social Media API Integrations (Facebook, X)", "OpenAI API"],
+      image: LylopImg,
+      github: "#",
+      demo: "https://drive.google.com/drive/folders/1ROXRHTZLaXBYyUIomnJREYeQOk4cbiEq?usp=sharing",
+    },
+    {
+      title: "Crop Recommendation AI Model",
+      category: "AI",
+      description: "An AI-powered system that predicts the most suitable crops for specific areas based on soil nutrients, rainfall, temperature, and humidity. Designed to help farmers and agricultural planners make data-driven decisions using machine learning.",
+      tech: ["Google Colab", "Kaggle Dataset", "Machine Learning Models: Decision Tree, Random Forest, Logistic Regression, XGBoost"],
+      image: cropImg,
+      github: "https://github.com/richartdo/crop-recommendation.git",
       demo: "#",
     },
     {
-      title: "E-Commerce Website",
-      category: "Web",
-      description: "A scalable e-commerce platform supporting product management, shopping carts, and integrated payments.",
-      tech: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
-      github: "#",
+      title: "Salary Predictor AI Model",
+      category: "AI",
+      description: "An AI-driven system that predicts employee salaries based on factors like experience, education, skills, and job role, helping organizations make data-driven compensation decisions.",
+      tech: ["Python", "Scikit-Learn", "Pandas & NumPy", "Machine Learning Models: Linear Regression, Random Forest, XGBoost"],
+      image: SalaryImg,
+      github: "https://github.com/richartdo/salary-predictor-app.git",
       demo: "#",
     },
     {
-      title: "M-Pesa Payment Checkout",
+      title: "WorkTrack — Employee Attendance Management System",
       category: "Web",
-      description: "A plug-and-play M-Pesa integration for businesses to accept mobile payments securely via STK Push API.",
-      tech: ["Node.js", "Express", "React", "MongoDB", "M-Pesa API"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Bike Spare Parts Website",
-      category: "Web",
-      description: "Niche e-commerce store for motorcycle parts with advanced search, filtering, and payment checkout.",
-      tech: ["React", "Node.js", "MongoDB", "TailwindCSS"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Hotel Management Website",
-      category: "Web",
-      description: "Comprehensive system for managing hotel reservations, room status, and guest payments.",
-      tech: ["React", "Django", "PostgreSQL", "Stripe"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Car Hire Website",
-      category: "Web",
-      description: "Online system for browsing, booking, and managing vehicle rentals with real-time availability tracking.",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Employees Attendance Management System",
-      category: "Web",
-      description: "A cloud-based platform to record employee attendance, leave requests, and generate attendance analytics.",
-      tech: ["React", "Django REST", "PostgreSQL", "Chart.js"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      description: "A full-stack web application integrated with ZKTeco biometric IoT devices for fingerprint-based employee attendance tracking. Features include an admin dashboard and employee portal, capturing real-time check-in/out data and automating attendance",
+      tech: ["React", "Node.js", "MongoDB", "IoT Integration: ZKTeco Biometric Devices"],
+      image: EmployImg,
       github: "#",
       demo: "#",
     },
     {
       title: "Library Management System",
       category: "Web",
-      description: "An efficient platform to manage books, members, and transactions for libraries with easy record retrieval.",
-      tech: ["Python", "Django", "SQLite", "Bootstrap"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      description: "A full-stack web application for managing books, users, and borrowing activities. Features include book cataloging, availability tracking, user roles, and automated borrow/return management to streamline library operations.",
+      tech: ["React", "Node.js", "MongoDB", "REST API Integration"],
+      image: LibraryImg,
       github: "#",
       demo: "#",
     },

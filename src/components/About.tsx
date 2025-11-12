@@ -79,6 +79,19 @@ const About = () => {
                 challenges into elegant, scalable solutions.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
+                I specialize in developing <span className="text-primary">AI models</span>,{" "}
+                from training datasets for machine learning, creating
+                <span className="text-primary">AI agents</span>, and leveraging{" "}
+                <span className="text-primary">n8n</span>, to automate diverse workflows. My focus is on using <span className="text-primary">AI automation</span> to help businesses enhance productivity, 
+                streamline operations, and stay ahead in the digital era.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Additionally, I help brands and organizations strengthen their <span className="text-primary">online presence</span>,{" "}
+                by automating their
+                <span className="text-primary">social media platforms</span>, and developing{" "}
+                <span className="text-primary">SEO-optimized websites</span>, and integrating<span className="text-primary">AI-driven insights</span> to analyze markets, identify trends, and guide data-informed decisions.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 My mission is to leverage cutting-edge technologies to drive innovation,
                 enhance efficiency, and deliver exceptional results that exceed expectations.
               </p>
