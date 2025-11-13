@@ -48,7 +48,7 @@ const Portfolio = () => {
       description: "An AI-powered automation system that manages social media content creation and posting. It fetches topics from Google Sheets, generates captions and images using AI, and automatically posts to Facebook, X, and LinkedIn based on platform-specific rules and schedules.",
       tech: ["n8n", "OpenAI", "Blotato", "Social Media API Integrations (Facebook, X, LinkedIn)"],
       image: BitflowImg,
-      github: "#",
+      github: "https://github.com/richartdo/n8n-agents.git",
       demo: "https://drive.google.com/drive/folders/1ROXRHTZLaXBYyUIomnJREYeQOk4cbiEq?usp=sharing",
     },
     {
@@ -57,7 +57,7 @@ const Portfolio = () => {
       description: "An AI-driven automation system designed for Facebook and X, enabling full-cycle content automation. It fetches topics from Google Sheets, generates captions and image prompts using AI, creates visuals, and posts automatically to each platform based on their rules and schedule.",
       tech: ["n8n", "OpenAI", "Blotato", "Social Media API Integrations (Facebook, X)", "OpenAI API"],
       image: LylopImg,
-      github: "#",
+      github: "https://github.com/richartdo/n8n-agents.git",
       demo: "https://drive.google.com/drive/folders/1ROXRHTZLaXBYyUIomnJREYeQOk4cbiEq?usp=sharing",
     },
     {
