@@ -27,6 +27,7 @@ const Footer = () => {
             transition={{ delay: 0.7 }}
             className="text-sm text-muted-foreground/60 mt-2"
           >
+            Find your tech solutions with me.
           </motion.p>
         </div>
       </div>
