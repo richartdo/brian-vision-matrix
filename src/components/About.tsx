@@ -89,7 +89,7 @@ const About = () => {
                 Additionally, I help brands and organizations strengthen their <span className="text-primary">online presence</span>,{" "}
                 by automating their
                 <span className="text-primary">social media platforms</span>, and developing{" "}
-                <span className="text-primary">SEO-optimized websites</span>, and integrating<span className="text-primary">AI-driven insights</span> to analyze markets, identify trends, and guide data-informed decisions.
+                <span className="text-primary">SEO-optimized websites</span>, and integrating <span className="text-primary">AI-driven insights</span> to analyze markets, identify trends, and guide data-informed decisions.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 My mission is to leverage cutting-edge technologies to drive innovation,
