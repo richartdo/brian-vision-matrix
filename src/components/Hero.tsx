@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
@@ -29,8 +29,8 @@ const Hero = () => {
         }} />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -42,13 +42,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-5xl lg:text-7xl font-bold mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
             >
               <span className="block text-foreground">Brian Richard</span>
-              <span className="block text-primary text-3xl lg:text-4xl mt-4 font-medium">
+              <span className="block text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-3 sm:mt-4 font-medium">
                 Software & AI Solutions Developer
               </span>
-              <span className="block text-accent text-3xl lg:text-4xl mt-2 font-medium">
+              <span className="block text-accent text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 font-medium">
                 | Cloud Engineer
               </span>
             </motion.h1>
@@ -57,7 +57,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl lg:text-2xl text-muted-foreground mb-8"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8"
             >
               Find your tech solutions with me.
             </motion.p>
@@ -66,14 +66,14 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
-              <Button variant="hero" size="lg" className="group">
-                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+              <Button variant="hero" size="lg" className="group w-full sm:w-auto touch-manipulation">
+                <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-bounce" />
                 Download CV
               </Button>
-              <Button variant="outline" size="lg" onClick={scrollToContact} className="group border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <Mail className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+              <Button variant="outline" size="lg" onClick={scrollToContact} className="group border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full sm:w-auto touch-manipulation">
+                <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:rotate-12 transition-transform" />
                 Contact Me
               </Button>
             </motion.div>
@@ -84,9 +84,9 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative h-[400px] lg:h-[500px]"
+            className="relative h-[300px] sm:h-[400px] lg:h-[500px] hidden sm:block"
           >
-            <div className="absolute inset-0 flex items-center justify-center gap-4 lg:gap-6">
+            <div className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-4 lg:gap-6">
               {heroImages.map((image, index) => (
                 <motion.div
                   key={index}
@@ -105,14 +105,14 @@ const Hero = () => {
                   }}
                   className="relative group"
                 >
-                  <div className="glass-strong rounded-2xl p-4 lg:p-6 w-32 h-32 lg:w-40 lg:h-40 flex items-center justify-center glow-blue hover:glow-blue-strong transition-all duration-300 hover:scale-110">
+                  <div className="glass-strong rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex items-center justify-center glow-blue hover:glow-blue-strong transition-all duration-300 hover:scale-110">
                     <img
                       src={image.src}
                       alt={image.label}
                       className="w-full h-full object-contain opacity-90"
                     />
                   </div>
-                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-xs lg:text-sm font-medium text-primary whitespace-nowrap">
                       {image.label}
                     </span>

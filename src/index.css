@@ -57,6 +57,52 @@ All colors MUST be HSL.
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  .light {
+    /* Light mode colors */
+    --background: 0 0% 98%;
+    --foreground: 220 40% 15%;
+
+    /* Light glass card effects */
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 15%;
+
+    /* Vibrant blue primary for light mode */
+    --primary: 200 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 200 100% 55%;
+
+    /* Light secondary */
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 40% 15%;
+
+    /* Light muted grays */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 40%;
+
+    /* Electric blue accent for light mode */
+    --accent: 195 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Light borders */
+    --border: 220 15% 85%;
+    --input: 220 15% 90%;
+    --ring: 200 100% 45%;
+
+    /* Light gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220, 20%, 98%) 0%, hsl(200, 30%, 96%) 100%);
+    --gradient-glow: linear-gradient(90deg, transparent, hsl(200, 100%, 45%, 0.2), transparent);
+    
+    /* Light shadows and glows */
+    --shadow-glow: 0 0 20px hsl(200, 100%, 45%, 0.2);
+    --shadow-card: 0 4px 20px hsl(220, 20%, 70%, 0.3);
+  }
 }
 
 @layer base {
@@ -69,6 +115,11 @@ All colors MUST be HSL.
     font-family: 'Inter', 'Poppins', sans-serif;
     background: linear-gradient(135deg, hsl(220, 40%, 8%) 0%, hsl(220, 50%, 3%) 100%);
     background-attachment: fixed;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .light body {
+    background: linear-gradient(135deg, hsl(220, 20%, 98%) 0%, hsl(200, 30%, 96%) 100%);
   }
 
   /* Glass effect utility */
@@ -78,10 +129,22 @@ All colors MUST be HSL.
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  .light .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
   .glass-strong {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .light .glass-strong {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.15);
   }
 
   /* Glow effects */

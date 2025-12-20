@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,20 +42,20 @@ const Navbar = () => {
         scrolled ? "glass-strong shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-xl lg:text-2xl font-bold text-foreground tracking-tight"
+            className="text-base sm:text-lg lg:text-2xl font-bold text-foreground tracking-tight flex-shrink-0"
           >
             <span className="text-primary">BRIAN RICHARD</span>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {navLinks.map((link, index) => (
               <motion.button
                 key={link.name}
@@ -62,22 +63,28 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
                 onClick={() => scrollToSection(link.href)}
-                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors relative group"
+                className="px-3 xl:px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
               </motion.button>
             ))}
+            <div className="ml-2">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-1 sm:gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-foreground hover:text-primary transition-colors touch-manipulation"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={22} className="sm:w-6 sm:h-6" /> : <Menu size={22} className="sm:w-6 sm:h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -86,19 +93,19 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden pb-4 glass-strong mt-2 rounded-lg"
+            className="lg:hidden pb-2 glass-strong mt-2 rounded-lg overflow-hidden"
           >
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-all"
+                className="block w-full text-left px-4 py-3.5 text-sm sm:text-base font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-all touch-manipulation active:scale-95"
               >
                 {link.name}
               </button>
             ))}
           </motion.div>
-        )}
+        )}      
       </div>
     </motion.nav>
   );

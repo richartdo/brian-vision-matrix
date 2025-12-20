@@ -104,19 +104,19 @@ const Portfolio = () => {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="portfolio" ref={ref} className="py-20 lg:py-32 relative">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="portfolio" ref={ref} className="py-12 sm:py-16 lg:py-32 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             My <span className="text-primary">Portfolio</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-8" />
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-6 sm:mb-8" />
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Explore my latest projects and solutions
           </p>
         </motion.div>
@@ -126,13 +126,13 @@ const Portfolio = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-10 sm:mb-12 px-2"
         >
           {filters.map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
+              className={`px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 rounded-full text-sm sm:text-base font-medium transition-all touch-manipulation active:scale-95 ${
                 activeFilter === filter
                   ? "bg-primary text-primary-foreground glow-blue"
                   : "glass text-muted-foreground hover:text-foreground"
@@ -144,7 +144,7 @@ const Portfolio = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -154,41 +154,41 @@ const Portfolio = () => {
               whileHover={{ y: -10 }}
               className="glass rounded-xl overflow-hidden group cursor-pointer"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 sm:gap-4">
                   <a
                     href={project.github}
-                    className="w-12 h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all"
+                    className="w-11 h-11 sm:w-12 sm:h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all touch-manipulation"
                     aria-label="View GitHub"
                   >
-                    <Github className="w-5 h-5" />
+                    <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
                   <a
                     href={project.demo}
-                    className="w-12 h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all"
+                    className="w-11 h-11 sm:w-12 sm:h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all touch-manipulation"
                     aria-label="View Demo"
                   >
-                    <ExternalLink className="w-5 h-5" />
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">
+              <div className="p-4 sm:p-5 lg:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-2">
+                <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 line-clamp-2">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs rounded-full bg-muted text-primary font-medium"
+                      className="px-2 sm:px-3 py-1 text-xs rounded-full bg-muted text-primary font-medium"
                     >
                       {tech}
                     </span>
