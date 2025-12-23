@@ -20,14 +20,41 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    if (honeypot) return; // Ignore bots.
+
+    try {
+      setIsSubmitting(true);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, honeypot }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Could not send message",
+        description: "Please try again or email me directly at brianarichard14@gmail.com.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -141,6 +168,16 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <form onSubmit={handleSubmit} className="glass-strong rounded-xl p-5 sm:p-6 lg:p-8 space-y-5 sm:space-y-6">
+              <input
+                type="text"
+                name="company"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                aria-hidden="true"
+              />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Name
@@ -189,10 +226,11 @@ const Contact = () => {
                 type="submit"
                 variant="hero"
                 size="lg"
+                disabled={isSubmitting}
                 className="w-full group touch-manipulation text-sm sm:text-base"
               >
                 <Send className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </motion.div>

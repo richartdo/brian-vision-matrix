@@ -67,10 +67,17 @@ const About = () => {
           >
             <div className="glass rounded-xl p-5 sm:p-6 lg:p-8 space-y-3 sm:space-y-4">
               <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-                I'm <span className="text-primary font-semibold">Brian Richard</span>, a passionate{" "}
-                <span className="text-accent">Software & AI Solutions Developer</span> and{" "}
-                <span className="text-accent">Cloud Engineer</span> dedicated to creating innovative
-                technological solutions.
+                I'm <span className="text-primary font-semibold">Brian Richard</span>, a{" "}
+                <span className="text-accent">Software Engineer</span> and CTO /{" "}
+                <a
+                  href="https://www.ibrahsoftsolutions.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-primary transition-colors underline"
+                >
+                  Founder
+                </a>
+                {" "}dedicated to creating innovative technological solutions.
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
                 With expertise in <span className="text-primary">artificial intelligence</span>,{" "}

@@ -22,7 +22,7 @@ const Hero = () => {
   const handleDownloadCV = () => {
     // Create a link to download the CV
     const link = document.createElement('a');
-    link.href = '/cv/BRIAN RICHARD CV.pdf';
+    link.href = '/BRIAN RICHARD CV.pdf';
     link.download = 'BRIAN_RICHARD_CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -56,10 +56,18 @@ const Hero = () => {
             >
               <span className="block text-foreground">Brian Richard</span>
               <span className="block text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-3 sm:mt-4 font-medium">
-                Software & AI Solutions Developer
+                Software Engineer
               </span>
               <span className="block text-accent text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 font-medium">
-                | Cloud Engineer
+                CTO /{" "}
+                <a
+                  href="https://www.ibrahsoftsolutions.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors underline"
+                >
+                  Founder
+                </a>
               </span>
             </motion.h1>
 
