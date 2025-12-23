@@ -19,6 +19,16 @@ const Hero = () => {
     }
   };
 
+  const handleDownloadCV = () => {
+    // Create a link to download the CV
+    const link = document.createElement('a');
+    link.href = '/cv/BRIAN RICHARD CV.pdf';
+    link.download = 'BRIAN_RICHARD_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20">
       {/* Animated Background Pattern */}
@@ -68,7 +78,12 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
-              <Button variant="hero" size="lg" className="group w-full sm:w-auto touch-manipulation">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                onClick={handleDownloadCV}
+                className="group w-full sm:w-auto touch-manipulation"
+              >
                 <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-bounce" />
                 Download CV
               </Button>
