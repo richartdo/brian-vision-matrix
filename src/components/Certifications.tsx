@@ -6,10 +6,10 @@ import { useState } from "react";
 import pythonCert from "@/assets/100DaysOfPython.jpg";
 import fullStackCert from "@/assets/CompleteFullstack development.jpg";
 import aiSoftwareCert from "@/assets/AI for Software Engineering Cert.png";
-import cloudIBMCert from "@/assets/MailBrain.png"; // Replace with actual cloud IBM certificate when available
-import awsCert from "@/assets/Bitflow.png"; // AWS in progress - using placeholder
-import employabilityCert from "@/assets/campusdeal.png"; // Replace with actual employability certificate when available
-import softwareTestingCert from "@/assets/crop.png"; // Replace with actual software testing certificate when available
+import cloudIBMCert from "@/assets/cloud-computing-fundamentals.png";
+import awsCert from "@/assets/AWS cert.png";
+import employabilityCert from "@/assets/employability1.jpeg";
+import softwareTestingCert from "@/assets/softwareTesting Cert.png";
 import computerLiteracyCert from "@/assets/computer Literacy cert.png";
 import socialMediaCert from "@/assets/social media management Cert.png";
 
