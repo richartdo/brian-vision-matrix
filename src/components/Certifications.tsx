@@ -124,7 +124,7 @@ const Certifications = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {certifications.map((cert, idx) => (
             <motion.div
               key={cert.title}
@@ -132,42 +132,42 @@ const Certifications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.05 * idx }}
-              className="glass-strong rounded-2xl overflow-hidden flex flex-col cursor-pointer group hover:scale-105 transition-transform"
+              className="glass-strong rounded-2xl overflow-hidden flex flex-col cursor-pointer group hover:glow-blue transition-all h-full"
               onClick={() => setSelectedCert(cert)}
             >
               {/* Certificate Image */}
-              <div className="relative h-40 sm:h-48 overflow-hidden bg-muted/20">
+              <div className="relative h-36 sm:h-40 lg:h-48 overflow-hidden bg-muted/20 flex-shrink-0">
                 <img
                   src={cert.image}
                   alt={cert.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-                <div className="absolute top-3 right-3">
-                  <div className="h-10 w-10 rounded-lg bg-primary/90 backdrop-blur-sm flex items-center justify-center">
-                    <Award className="h-5 w-5 text-primary-foreground" />
+                <div className="absolute top-2 right-2 sm:top-3 sm:right-3">
+                  <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-lg bg-primary/90 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                    <Award className="h-4 w-4 sm:h-5 sm:w-5 text-primary-foreground" />
                   </div>
                 </div>
               </div>
 
               {/* Certificate Info */}
-              <div className="p-5 sm:p-6 flex flex-col gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-primary/25 via-primary/15 to-accent/20 border border-primary/20 flex items-center justify-center text-xs font-semibold text-primary">
+              <div className="p-4 sm:p-5 flex flex-col gap-3 flex-grow">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-primary/25 via-primary/15 to-accent/20 border border-primary/20 flex items-center justify-center text-xs font-semibold text-primary flex-shrink-0">
                     {cert.year}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-base sm:text-lg font-semibold text-foreground leading-snug line-clamp-2">{cert.title}</h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground">{cert.issuer}</p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm sm:text-base font-semibold text-foreground leading-snug line-clamp-2">{cert.title}</h3>
+                    <p className="text-xs text-muted-foreground truncate">{cert.issuer}</p>
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 flex-grow">
                   {cert.description}
                 </p>
 
                 <div className="flex items-center justify-between pt-2 gap-2">
-                  <span className={`text-xs px-3 py-1 rounded-full border ${
+                  <span className={`text-xs px-2.5 py-1 rounded-full border whitespace-nowrap ${
                     cert.inProgress 
                       ? "bg-accent/20 text-accent border-accent/40" 
                       : "bg-muted/60 text-foreground border-border/60"
@@ -178,11 +178,11 @@ const Certifications = () => {
                     href={cert.downloadUrl}
                     download
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1.5 text-primary text-xs sm:text-sm font-medium hover:underline"
+                    className="inline-flex items-center gap-1 text-primary text-xs font-medium hover:underline flex-shrink-0"
                     aria-label={`Download ${cert.title} certificate`}
                   >
-                    <Download className="h-3.5 w-3.5" />
-                    Download
+                    <Download className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="hidden sm:inline">Download</span>
                   </a>
                 </div>
               </div>

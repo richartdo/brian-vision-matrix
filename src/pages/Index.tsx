@@ -10,6 +10,7 @@ import CurrentWork from "@/components/CurrentWork";
 import Interests from "@/components/Interests";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingFAQ from "@/components/FloatingFAQ";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <FloatingFAQ />
     </div>
   );
 };

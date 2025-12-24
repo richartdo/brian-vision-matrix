@@ -104,37 +104,36 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {skillCategories.map((category, idx) => (
             <motion.div
               key={category.title}
-              className="glass-strong rounded-2xl p-5 sm:p-6 lg:p-7 flex flex-col gap-4"
+              className="glass-strong rounded-2xl p-4 sm:p-5 lg:p-6 flex flex-col gap-3 sm:gap-4 h-full hover:glow-blue transition-all duration-300"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               custom={idx}
               variants={itemVariants}
             >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                    {category.description}
-                  </p>
-                </div>
+              <div className="flex-shrink-0">
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground">{category.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed">
+                  {category.description}
+                </p>
               </div>
 
-              <div className="flex flex-wrap gap-2.5">
-                {category.items.map((item, i) => (
-                  <span
+              <div className="flex flex-wrap gap-2">
+                {category.items.map((item) => (
+                  <motion.span
                     key={item.name}
-                    className="inline-flex items-center gap-2 rounded-full px-3 py-2 bg-muted/60 text-foreground border border-border/60 backdrop-blur-sm"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-2.5 sm:px-3 py-1.5 sm:py-2 bg-muted/60 text-foreground border border-border/60 backdrop-blur-sm hover:border-primary/50 transition-colors"
                   >
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/15 text-primary font-semibold text-xs">
+                    <span className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-primary/15 text-primary font-semibold text-xs flex-shrink-0">
                       {item.tag}
                     </span>
-                    <span className="text-sm font-medium">{item.name}</span>
-                  </span>
+                    <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{item.name}</span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>

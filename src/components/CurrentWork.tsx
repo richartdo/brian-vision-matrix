@@ -118,11 +118,11 @@ const CurrentWork = () => {
             className="relative"
           >
             {/* Slider Container */}
-            <div className="relative overflow-hidden rounded-2xl glass-strong p-8 lg:p-12 min-h-[500px]">
+            <div className="relative overflow-hidden rounded-2xl glass-strong p-6 sm:p-8 lg:p-12 min-h-[500px] sm:min-h-[550px] lg:min-h-[600px]">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 p-8 lg:p-12 transition-all duration-500 ${
+                  className={`absolute inset-0 p-6 sm:p-8 lg:p-12 transition-all duration-500 ${
                     index === activeSlide
                       ? "opacity-100 translate-x-0"
                       : index < activeSlide
@@ -130,38 +130,38 @@ const CurrentWork = () => {
                       : "opacity-0 translate-x-full"
                   }`}
                 >
-                  <div className="grid lg:grid-cols-2 gap-8 items-center h-full">
+                  <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center h-full">
                     {/* Project Image */}
-                    <div className="relative h-64 lg:h-80 rounded-xl overflow-hidden glow-blue group">
+                    <div className="relative h-48 sm:h-56 lg:h-72 rounded-xl overflow-hidden glow-blue group order-2 lg:order-1">
                       <img
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-                      <div className="absolute top-4 right-4">
-                        <div className="glass-strong rounded-full p-4">
-                          <project.icon className="w-8 h-8 text-primary" />
+                      <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                        <div className="glass-strong rounded-full p-3 sm:p-4">
+                          <project.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                         </div>
                       </div>
                     </div>
 
                     {/* Project Details */}
-                    <div className="space-y-6">
+                    <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
                       <div>
-                        <span className="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
+                        <span className="inline-block px-3 sm:px-4 py-1 rounded-full bg-primary/20 text-primary text-xs sm:text-sm font-medium mb-3 sm:mb-4">
                           {project.status}
                         </span>
-                        <h3 className="text-3xl font-bold text-foreground mb-3">
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2 sm:mb-3 line-clamp-2">
                           {project.title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                           {project.description}
                         </p>
                       </div>
 
                       <div>
-                        <div className="flex justify-between text-sm mb-2">
+                        <div className="flex justify-between text-xs sm:text-sm mb-2">
                           <span className="text-muted-foreground">Progress</span>
                           <span className="text-primary font-medium">{project.progress}%</span>
                         </div>
@@ -175,15 +175,20 @@ const CurrentWork = () => {
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech) => (
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                        {project.tech.slice(0, 3).map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-xs rounded-full bg-muted text-primary font-medium"
+                            className="px-2.5 sm:px-3 py-1 text-xs rounded-full bg-muted text-primary font-medium"
                           >
                             {tech}
                           </span>
                         ))}
+                        {project.tech.length > 3 && (
+                          <span className="px-2.5 sm:px-3 py-1 text-xs rounded-full bg-muted text-primary font-medium">
+                            +{project.tech.length - 3}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -194,29 +199,29 @@ const CurrentWork = () => {
             {/* Navigation Buttons */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all z-10"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all z-10 active:scale-95"
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all z-10"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all z-10 active:scale-95"
               aria-label="Next slide"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Slide Indicators */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-1.5 sm:gap-2 mt-5 sm:mt-6 flex-wrap">
               {projects.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
+                  className={`h-2 rounded-full transition-all ${
                     index === activeSlide
-                      ? "bg-primary w-8"
-                      : "bg-muted hover:bg-primary/50"
+                      ? "bg-primary w-6 sm:w-8"
+                      : "bg-muted hover:bg-primary/50 w-2"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

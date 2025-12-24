@@ -90,7 +90,7 @@ const Experience = () => {
           {/* Center Line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary transform -translate-x-1/2 hidden md:block" />
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-10 lg:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -99,44 +99,49 @@ const Experience = () => {
                 transition={{ duration: 0.6, delay: 0.2 * index }}
                 className={`relative flex items-start ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } flex-col md:gap-8`}
+                } flex-col md:gap-6 lg:gap-8`}
               >
                 {/* Content */}
-                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:text-right" : "md:text-left"} text-left mb-8 md:mb-0`}>
-                  <div className="glass-strong rounded-xl p-6 hover:glow-blue transition-all group">
-                    <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:text-right" : "md:text-left"} text-left mb-6 md:mb-0`}>
+                  <div className="glass-strong rounded-xl p-4 sm:p-5 lg:p-6 hover:glow-blue transition-all group h-full">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors line-clamp-2">
                       {exp.role}
                     </h3>
-                    <p className="text-primary font-medium mb-1">{exp.company}</p>
-                    <p className="text-muted-foreground text-sm mb-4">{exp.duration}</p>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    <p className="text-sm sm:text-base text-primary font-medium mb-0.5">{exp.company}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">{exp.duration}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4">
                       {exp.description}
                     </p>
                     <div className="space-y-2">
-                      {exp.achievements.map((achievement, i) => (
+                      {exp.achievements.slice(0, 2).map((achievement, i) => (
                         <div
                           key={i}
                           className={`flex items-start gap-2 ${
                             index % 2 === 0 ? "md:justify-end" : "md:justify-start"
                           } justify-start`}
                         >
-                          <span className="text-accent mt-1">▹</span>
-                          <span className="text-sm text-muted-foreground">{achievement}</span>
+                          <span className="text-accent mt-0.5 flex-shrink-0">▹</span>
+                          <span className="text-xs sm:text-sm text-muted-foreground">{achievement}</span>
                         </div>
                       ))}
+                      {exp.achievements.length > 2 && (
+                        <p className="text-xs text-primary/70 italic pt-1">
+                          +{exp.achievements.length - 2} more achievements
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
 
                 {/* Center Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-8 hidden md:block">
-                  <div className="w-4 h-4 rounded-full bg-primary glow-blue-strong animate-glow-pulse" />
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-6 md:top-8 hidden md:block">
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-primary glow-blue-strong animate-glow-pulse" />
                 </div>
 
                 {/* Company Icon */}
                 <div className="w-full md:w-5/12 flex md:justify-center justify-start mb-4 md:mb-0">
-                  <div className="w-20 h-20 glass-strong rounded-full flex items-center justify-center glow-blue">
-                    <exp.icon className="w-10 h-10 text-primary" />
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 glass-strong rounded-full flex items-center justify-center glow-blue flex-shrink-0">
+                    <exp.icon className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-primary" />
                   </div>
                 </div>
               </motion.div>

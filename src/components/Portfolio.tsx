@@ -356,10 +356,10 @@ const Portfolio = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * index }}
               whileHover={{ y: -10 }}
-              className="glass rounded-xl overflow-hidden group cursor-pointer"
+              className="glass rounded-xl overflow-hidden group cursor-pointer h-full flex flex-col hover:glow-blue transition-all duration-300"
               onClick={() => handleSelectProject(project)}
             >
-              <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden">
+              <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden flex-shrink-0">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -368,36 +368,43 @@ const Portfolio = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 sm:gap-4">
                   <a
                     href={project.github}
-                    className="w-11 h-11 sm:w-12 sm:h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all touch-manipulation"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-10 h-10 sm:w-11 sm:h-11 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all touch-manipulation active:scale-95"
                     aria-label="View GitHub"
                   >
                     <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
                   <a
                     href={project.demo}
-                    className="w-11 h-11 sm:w-12 sm:h-12 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all touch-manipulation"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-10 h-10 sm:w-11 sm:h-11 glass-strong rounded-full flex items-center justify-center text-primary hover:glow-blue transition-all touch-manipulation active:scale-95"
                     aria-label="View Demo"
                   >
                     <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
                 </div>
               </div>
-              <div className="p-4 sm:p-5 lg:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
+              <div className="p-4 sm:p-5 flex flex-col gap-2 flex-grow">
+                <h3 className="text-base sm:text-lg font-bold text-foreground line-clamp-1">
                   {project.title}
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 line-clamp-2">
+                <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 flex-grow">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {project.tech.map((tech) => (
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {project.tech.slice(0, 3).map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 sm:px-3 py-1 text-xs rounded-full bg-muted text-primary font-medium"
+                      className="px-2 py-0.5 text-xs rounded-full bg-muted text-primary font-medium"
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.tech.length > 3 && (
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-muted text-primary font-medium">
+                      +{project.tech.length - 3}
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>
