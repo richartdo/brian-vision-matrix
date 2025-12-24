@@ -193,11 +193,11 @@ const Portfolio = () => {
           className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
-            My <span className="text-primary">Portfolio</span>
+            Web Development & AI <span className="text-primary">Projects</span>
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-6 sm:mb-8" />
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Explore my latest projects and solutions
+            Featured projects showcasing full-stack web development, AI automation, and cloud solutions
           </p>
         </motion.div>
 

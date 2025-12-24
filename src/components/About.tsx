@@ -67,17 +67,7 @@ const About = () => {
           >
             <div className="glass rounded-xl p-5 sm:p-6 lg:p-8 space-y-3 sm:space-y-4">
               <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-                I'm <span className="text-primary font-semibold">Brian Richard</span>, a{" "}
-                <span className="text-accent">Software Engineer</span> and CTO /{" "}
-                <a
-                  href="https://www.ibrahsoftsolutions.tech/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent hover:text-primary transition-colors underline"
-                >
-                  Founder
-                </a>
-                {" "}dedicated to creating innovative technological solutions.
+                I'm <span className="text-primary font-semibold">Brian Richard</span>, a full-stack web developer and software engineer based in Nairobi, Kenya. I specialize in building AI-powered automation systems, cloud-native applications, and modern web solutions using Python, React, Node.js, and cutting-edge technologies.
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
                 With expertise in <span className="text-primary">artificial intelligence</span>,{" "}

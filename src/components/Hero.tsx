@@ -56,10 +56,10 @@ const Hero = () => {
             >
               <span className="block text-foreground">Brian Richard</span>
               <span className="block text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-3 sm:mt-4 font-medium">
-                Software Engineer
+                Software Engineer & Full Stack Developer
               </span>
-              <span className="block text-accent text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 font-medium">
-                CTO /{" "}
+              <span className="block text-accent text-xs sm:text-sm md:text-base lg:text-lg mt-2 font-medium">
+                Based in Nairobi, Kenya • CTO /{" "}
                 <a
                   href="https://www.ibrahsoftsolutions.tech/"
                   target="_blank"
@@ -77,7 +77,7 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8"
             >
-              Find your tech solutions with me.
+              Specializing in AI automation, web development, and cloud solutions. Hire a Python, React, and Node.js expert.
             </motion.p>
 
             <motion.div

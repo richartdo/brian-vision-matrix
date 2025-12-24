@@ -96,11 +96,11 @@ const Skills = () => {
           className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
-            Skills & Stacks
+            Technical Skills & <span className="text-primary">Tech Stack</span>
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-6 sm:mb-8" />
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Languages, cloud, AI, automation, and product-ready web stacks.
+            Expertise in Python, React, Node.js, AI/ML, cloud platforms, and modern web development frameworks
           </p>
         </motion.div>
 

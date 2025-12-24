@@ -116,11 +116,11 @@ const Certifications = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
-            Certifications
+            Professional <span className="text-primary">Certifications</span>
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-6 sm:mb-8" />
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Verified credentials across cloud, AI, automation, and frontend engineering.
+            Verified credentials in Python, web development, AI, cloud computing, and digital marketing
           </p>
         </div>
 
