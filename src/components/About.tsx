@@ -38,13 +38,13 @@ const About = () => {
           <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center lg:justify-end mb-8 lg:mb-0"
+            className="flex justify-center lg:justify-end mb-6 lg:mb-0 order-2 lg:order-1"
           >
             <div className="relative">
               <div className="absolute inset-0 bg-primary rounded-full blur-3xl opacity-20 animate-glow-pulse" />
@@ -52,7 +52,7 @@ const About = () => {
                 <img
                   src={profilePhoto}
                   alt="Brian Richard"
-                  className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover"
+                  className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover"
                 />
               </div>
             </div>
@@ -63,7 +63,7 @@ const About = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-5 sm:space-y-6"
+            className="space-y-4 sm:space-y-5 order-1 lg:order-2"
           >
             <div className="glass rounded-xl p-5 sm:p-6 lg:p-8 space-y-3 sm:space-y-4">
               <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
